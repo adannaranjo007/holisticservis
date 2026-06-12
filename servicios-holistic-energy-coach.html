@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios | Holistic Energy Coach</title>
+  <meta name="description" content="Conoce todos los servicios de Holistic Energy Coach: Sinergia Integral, Flores de Bach, Bio-Regeneración y Ballet Free." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: #f5f0fc;
+      color: #2d1f4a;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      border-bottom: 0.5px solid rgba(140,90,200,0.18);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #7040b0;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9070b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: #5a2d9a; font-weight: 500; }
+    .nav-lang { font-size: 11px; color: #c4a8e8; }
+
+    @media (max-width: 680px) {
+      .nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 11px; }
+    }
+
+    /* ── HERO ── */
+    .page-hero {
+      background: #fff;
+      padding: 64px 40px 56px;
+      border-bottom: 0.5px solid rgba(140,90,200,0.12);
+      text-align: center;
+    }
+    .page-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #a078c8;
+      margin-bottom: 18px;
+    }
+    .divider-center {
+      width: 32px;
+      height: 1px;
+      background: #c4a8e8;
+      margin: 0 auto 20px;
+    }
+    .page-h1 {
+      font-size: 38px;
+      font-weight: 400;
+      font-style: italic;
+      color: #2d1f4a;
+      margin-bottom: 16px;
+    }
+    .page-h1 em { font-style: normal; color: #7040b0; }
+    .page-sub {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #6a5285;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── TABS ── */
+    .tabs {
+      display: flex;
+      border-bottom: 0.5px solid rgba(140,90,200,0.18);
+      background: #fff;
+      padding: 0 40px;
+      position: sticky;
+      top: 57px;
+      z-index: 90;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      padding: 16px 24px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #a078c8;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .tab.active { color: #5a2d9a; border-bottom-color: #7040b0; }
+    .tab:hover { color: #5a2d9a; }
+
+    /* ── SECCIONES ── */
+    .srv-section { display: none; }
+    .srv-section.active { display: block; }
+
+    /* ── BANNER ── */
+    .banner {
+      position: relative;
+      height: 340px;
+      overflow: hidden;
+    }
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.88) saturate(0.75);
+      display: block;
+    }
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(245,240,252,0) 35%, rgba(245,240,252,0.88) 100%);
+    }
+    .banner-title {
+      position: absolute;
+      bottom: 36px;
+      left: 40px;
+      right: 40px;
+    }
+    .banner-tag {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #c4a8e8;
+      margin-bottom: 10px;
+    }
+    .banner-h2 {
+      font-size: 32px;
+      font-weight: 400;
+      font-style: italic;
+      color: #2d1f4a;
+    }
+
+    /* ── CONTENIDO ── */
+    .content { padding: 56px 40px; }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      max-width: 980px;
+    }
+    @media (max-width: 760px) {
+      .content-grid { grid-template-columns: 1fr; gap: 36px; }
+      .content { padding: 40px 20px; }
+      .banner { height: 220px; }
+      .banner-title { left: 20px; right: 20px; bottom: 20px; }
+      .banner-h2 { font-size: 24px; }
+      .page-h1 { font-size: 28px; }
+      .page-hero { padding: 44px 20px 36px; }
+      .tabs { padding: 0 20px; }
+      .nav { flex-wrap: wrap; gap: 10px; }
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #a078c8;
+      margin-bottom: 14px;
+    }
+    .divider {
+      width: 32px;
+      height: 1px;
+      background: #c4a8e8;
+      margin-bottom: 20px;
+    }
+    .content-h3 {
+      font-size: 22px;
+      font-weight: 400;
+      font-style: italic;
+      color: #2d1f4a;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .content-sub {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #b8a0d0;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 0.5px solid rgba(160,120,200,0.18);
+    }
+    .content-body {
+      font-size: 14px;
+      line-height: 1.88;
+      color: #5a4275;
+      margin-bottom: 16px;
+    }
+    .content-body strong { color: #2d1f4a; font-weight: 500; }
+
+    /* ── PILARES ── */
+    .pilares {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .pilar {
+      padding: 16px 20px;
+      background: #fff;
+      border: 0.5px solid rgba(160,120,200,0.22);
+      border-left: 3px solid #c4a8e8;
+    }
+    .pilar-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #2d1f4a;
+      margin-bottom: 6px;
+    }
+    .pilar-body {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #6a5285;
+    }
+
+    /* ── BULLETS ── */
+    .bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 16px 0;
+    }
+    .bullets li {
+      font-size: 13px;
+      color: #5a4275;
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+    }
+    .bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #c4a8e8;
+    }
+
+    /* ── HIGHLIGHT ── */
+    .highlight {
+      background: #ede4f8;
+      border: 0.5px solid rgba(160,120,200,0.25);
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .highlight p {
+      font-size: 15px;
+      font-style: italic;
+      color: #2d1f4a;
+      line-height: 1.72;
+    }
+    .highlight em { color: #7040b0; font-style: normal; }
+
+    /* ── IMAGEN ── */
+    .content-img {
+      overflow: hidden;
+      border: 0.5px solid rgba(160,120,200,0.2);
+    }
+    .content-img img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      filter: brightness(1.02) saturate(0.85);
+      max-height: 580px;
+    }
+
+    /* ── GALERÍA ── */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin: 32px 0;
+    }
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      filter: brightness(1.02) saturate(0.82);
+    }
+
+    /* ── CTA BOTÓN ── */
+    .cta-btn {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 13px 32px;
+      border: 1px solid #9070b8;
+      color: #5a2d9a;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      font-family: 'Georgia', serif;
+    }
+    .cta-btn:hover {
+      background: #7040b0;
+      color: #fff;
+    }
+
+    /* ── SEPARADOR ── */
+    .srv-divider {
+      height: 1px;
+      background: rgba(160,120,200,0.15);
+      margin: 0 40px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 28px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.5px solid rgba(140,90,200,0.12);
+      background: #fff;
+    }
+    .footer-logo {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c4a8e8;
+      text-decoration: none;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: #c4a8e8;
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: #7040b0; }
+    .footer-copy { font-size: 11px; color: #d4c0ea; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="https://holistic-energy-coach.com/" class="nav-logo">Holistic Energy Coach</a>
+    <ul class="nav-links">
+      <li><a href="https://holistic-energy-coach.com/">Inicio</a></li>
+      <li><a href="#">Sobre mí</a></li>
+      <li><a href="https://holistic-energy-coach.com/mis-servicios" class="active">Servicios</a></li>
+      <li><a href="https://holistic-energy-coach.com/contacto">Contacto</a></li>
+    </ul>
+    <span class="nav-lang">ES · FR</span>
+  </nav>
+
+  <!-- HERO DE PÁGINA -->
+  <div class="page-hero">
+    <p class="page-eyebrow">Lo que ofrezco</p>
+    <div class="divider-center"></div>
+    <h1 class="page-h1">Mis <em>Servicios</em></h1>
+    <p class="page-sub">Cada servicio está diseñado para atender una dimensión de tu ser — cuerpo, mente y espíritu — en una visión totalmente holística.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('sinergia', this)">Sinergia Integral</div>
+    <div class="tab" onclick="showTab('bach', this)">Flores de Bach</div>
+    <div class="tab" onclick="showTab('biorregen', this)">Bio-Regeneración</div>
+    <div class="tab" onclick="showTab('ballet', this)">Ballet Free</div>
+  </div>
+
+  <!-- ════════════════════════════════
+       SINERGIA INTEGRAL
+  ════════════════════════════════ -->
+  <div id="srv-sinergia" class="srv-section active">
+
+    <div class="banner">
+      <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1200,fit=crop/AR0Mw9l9goSZVOal/estrellas-AQEDKXQOWgcjKjzv.jpeg" alt="Sinergia Integral" />
+      <div class="banner-overlay"></div>
+      <div class="banner-title">
+        <p class="banner-tag">Mente · Método de autor</p>
+        <h2 class="banner-h2">Sinergia Integral</h2>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="highlight">
+        <p>✨ La unión perfecta entre lógica biológica y liberación bioenergética. ✨<br><br>
+        Este no es un acompañamiento convencional; es mi servicio más completo y potente. La Sinergia Integral es mi propia metodología de Inmersión Total (aprox. 2 horas y media), diseñada para quien no busca soluciones superficiales, sino una <em>resolución real desde la raíz</em>. En esta sesión, unifico la ciencia, la emoción y la energía para restaurar tu equilibrio bajo una visión totalmente holística.</p>
+      </div>
+
+      <p class="section-label">Los pilares del método</p>
+      <div class="divider"></div>
+
+      <div class="pilares">
+        <div class="pilar">
+          <div class="pilar-title">Biodescodificación y Nueva Medicina Germánica</div>
+          <div class="pilar-body">Es mi punto más fuerte. Me enfoco en descubrir la emoción oculta detrás del síntoma. No veo el síntoma como un error, sino como una respuesta biológica a un impacto emocional no resuelto. Al identificar este código, desactivo la necesidad del cuerpo de seguir expresando ese desequilibrio.</div>
+        </div>
+        <div class="pilar">
+          <div class="pilar-title">Estudio Transgeneracional</div>
+          <div class="pilar-body">Realizo un análisis profundo de los datos del árbol para identificar si el consultante es doble por nacimiento o concepción, o si está reparando una historia familiar. El objetivo es localizar la masa conflictual y comprender los patrones repetitivos, ya sean de origen sistémico o de la propia historia personal.</div>
+        </div>
+        <div class="pilar">
+          <div class="pilar-title">TFT Pro — Thought Field Therapy</div>
+          <div class="pilar-body">Aplico la técnica avanzada de desactivación de campos de pensamiento mediante algoritmos en puntos de acupuntura. Es una herramienta técnica de alta precisión para liberar fobias, traumas y estrés en minutos.</div>
+        </div>
+        <div class="pilar">
+          <div class="pilar-title">Bioenergética y Código del Cuerpo</div>
+          <div class="pilar-body">Realizo un escaneo profundo para detectar "muros del corazón" e interferencias, liberando las cargas estancadas que impiden que tu sistema funcione a su máximo potencial.</div>
+        </div>
+        <div class="pilar">
+          <div class="pilar-title">Reprogramación y PNL</div>
+          <div class="pilar-body">Utilizo herramientas de Programación Neurolingüística para actualizar tus mapas mentales y asegurar que tu mente sea el motor de tu nueva realidad.</div>
+        </div>
+      </div>
+
+      <p class="content-body">Esta sesión es un viaje de 150 minutos donde tu energía dicta el camino. Al integrar la Biodescodificación con la liberación emocional técnica, logro resultados que otros enfoques tardarían meses en alcanzar. Es la representación viva de la triqueta de mi logo: cuerpo, mente y espíritu trabajando en una sinergia total.</p>
+      <p class="content-body">Además de estas herramientas, cuento con otros recursos y técnicas avanzadas que te contaré directamente en consulta, adaptándolas a lo que tu sistema necesite en ese momento.</p>
+
+      <a class="cta-btn" href="https://wa.me/15144304667">Agendar sesión</a>
+    </div>
+
+    <div class="srv-divider"></div>
+
+    <div class="content" style="padding-top: 40px;">
+      <div class="gallery">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=400,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-27-at-11.54.44-pm-gbW43OQoBGpYW9oM.jpeg" alt="Sinergia Integral sesión" />
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=400,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-28-at-12.00.31-am-kbeQQopaT29SsepG.jpeg" alt="Sinergia Integral sesión" />
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=400,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-28-at-10.55.34-am-V9qztCfTbpwJEr5h.jpeg" alt="Sinergia Integral sesión" />
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=400,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-27-at-1.28.18-pm-3-KFoAuHD7rad3lWfA.jpeg" alt="Sinergia Integral sesión" />
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════
+       FLORES DE BACH
+  ════════════════════════════════ -->
+  <div id="srv-bach" class="srv-section">
+
+    <div class="banner">
+      <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1200,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2025-03-03-at-10.02.06-pm-mv02N98qNaCQqOej.jpeg" alt="Flores de Bach" />
+      <div class="banner-overlay"></div>
+      <div class="banner-title">
+        <p class="banner-tag">Espíritu · Practitioner registrada BFRP</p>
+        <h2 class="banner-h2">Flores de Bach</h2>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="content-grid">
+        <div>
+          <p class="section-label">El arte de la armonía emocional</p>
+          <div class="divider"></div>
+          <h3 class="content-h3">Sistema Bach y Armonía</h3>
+          <p class="content-sub">Sistema floral · 38 esencias · Sin efectos secundarios</p>
+
+          <p class="content-body">El equilibrio emocional es el pilar de tu bienestar integral. Este sistema fue desarrollado por el Dr. Edward Bach, un eminente médico británico, bacteriólogo y patólogo. Antes de crear este método, el Dr. Bach fue un científico de renombre en el Hospital Homeopático de Londres, pionero en el desarrollo de vacunas y en la investigación de la relación entre el bienestar interior y la respuesta del organismo.</p>
+
+          <p class="content-body">Hoy en día, las Flores de Bach son reconocidas y recomendadas por psicólogos y psiquiatras en todo el mundo como un apoyo complementario de alta eficacia. Estos profesionales las integran en sus procesos porque comprenden que, para lograr una estabilidad verdadera, es necesario atender los estados emocionales que subyacen a cada desequilibrio.</p>
+
+          <p class="section-label" style="margin-top: 28px;">¿Por qué son una opción esencial hoy?</p>
+          <div class="divider"></div>
+          <p class="content-body">Basado en la frecuencia vibracional de 38 flores silvestres, este método permite transformar los bloqueos que impiden tu armonía:</p>
+          <ul class="bullets">
+            <li><strong>Transformar la inquietud:</strong> Cambiar el miedo y la ansiedad por una sensación de seguridad y paz profunda.</li>
+            <li><strong>Claridad en la crisis:</strong> Aportar enfoque y serenidad en momentos de cambios o decisiones difíciles.</li>
+            <li><strong>Fortaleza interior:</strong> Elevar la autoestima y la confianza, permitiendo que tu verdadera esencia se manifieste.</li>
+          </ul>
+
+          <p class="section-label" style="margin-top: 28px;">Inocuidad y seguridad total</p>
+          <div class="divider"></div>
+          <ul class="bullets">
+            <li><strong>100% Naturales:</strong> Son esencias puras, sin químicos ni efectos secundarios.</li>
+            <li><strong>Para toda la familia:</strong> Su suavidad las hace ideales para bebés, mujeres embarazadas y también para animales.</li>
+            <li><strong>Compatibilidad total:</strong> No interfieren con tratamientos convencionales, sino que favorecen un estado de tranquilidad que apoya la respuesta del organismo al reducir el estrés.</li>
+          </ul>
+
+          <div class="highlight" style="margin-top: 28px;">
+            <p>Como <em>Practitioner Registrada por la Fundación Bach de Inglaterra (BFRP)</em>, mi acompañamiento sigue los estándares de calidad y ética más estrictos a nivel mundial. Realizo un análisis profundo para diseñar la combinación exacta que tu sistema necesita para recuperar su equilibrio.<br><br>Descubre la paz que surge cuando tus emociones están en sintonía con tu diseño original.</p>
+          </div>
+
+          <a class="cta-btn" href="https://wa.me/15144304667">Agendar sesión</a>
+        </div>
+        <div>
+          <div class="content-img">
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=700,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2025-03-03-at-10.02.06-pm-mv02N98qNaCQqOej.jpeg" alt="Flores de Bach" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════
+       BIO-REGENERACIÓN
+  ════════════════════════════════ -->
+  <div id="srv-biorregen" class="srv-section">
+
+    <div class="banner">
+      <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1200,fit=crop/AR0Mw9l9goSZVOal/estrellas-AQEDKXQOWgcjKjzv.jpeg" alt="Bio-Regeneración y Movimiento" />
+      <div class="banner-overlay"></div>
+      <div class="banner-title">
+        <p class="banner-tag">Cuerpo · Biomagnetismo · Infrarrojos</p>
+        <h2 class="banner-h2">Bio-Regeneración &amp; Movimiento</h2>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="highlight">
+        <p>La excelencia no se improvisa. Se construye con disciplina, estrategia y <em>recuperación inteligente.</em><br><br>
+        Biomagnetic Recovery integra biomagnetismo y tecnología infrarroja profunda en un sistema diseñado para atletas, bailarines y personas sometidas a alta exigencia física que buscan sostener su rendimiento en el más alto nivel.</p>
+      </div>
+
+      <div class="content-grid" style="margin-top: 40px;">
+        <div>
+          <p class="section-label">Biomagnetic Recovery</p>
+          <div class="divider"></div>
+          <h3 class="content-h3">Recuperación estratégica de alto rendimiento</h3>
+          <p class="content-sub">Biomagnetismo · Tecnología infrarroja profunda</p>
+
+          <p class="section-label">Equilibrio biomagnético</p>
+          <div class="divider"></div>
+          <p class="content-body" style="font-style: italic; color: #2d1f4a;">Precisión interna y soporte funcional</p>
+          <ul class="bullets">
+            <li>Optimización del pH tras cargas intensas</li>
+            <li>Recuperación muscular estratégica</li>
+            <li>Mejora de flexibilidad y movilidad</li>
+            <li>Reducción de tensiones acumuladas</li>
+            <li>Soporte al rendimiento sostenido</li>
+          </ul>
+
+          <p class="section-label" style="margin-top: 28px;">Tecnología infrarroja profunda</p>
+          <div class="divider"></div>
+          <p class="content-body" style="font-style: italic; color: #2d1f4a;">Soporte tisular avanzado</p>
+          <p class="content-body">Inspirada en desarrollos utilizados en investigación aeroespacial, actúa en capas musculares profundas para:</p>
+          <ul class="bullets">
+            <li>Favorecer la desinflamación articular</li>
+            <li>Estimular oxigenación y circulación</li>
+            <li>Liberar contracturas persistentes</li>
+            <li>Reducir rigidez post-entrenamiento</li>
+            <li>Potenciar la recuperación entre sesiones exigentes</li>
+          </ul>
+
+          <p class="content-body" style="margin-top: 24px; font-style: italic; color: #2d1f4a;">El cuerpo es tu herramienta. La recuperación es tu ventaja competitiva.</p>
+
+          <a class="cta-btn" href="https://wa.me/15144304667">Agendar sesión</a>
+        </div>
+        <div>
+          <div class="content-img">
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=700,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-28-at-12.00.31-am-kbeQQopaT29SsepG.jpeg" alt="Biomagnetic Recovery" style="max-height: 460px;" />
+          </div>
+          <div class="pilar" style="margin-top: 16px;">
+            <div class="pilar-title">Para quién es Biomagnetic Recovery</div>
+            <div class="pilar-body">Deportistas de alto rendimiento · Bailarines profesionales y pre-profesionales · Entrenadores físicamente activos · Personas con alto volumen de entrenamiento</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════
+       BALLET FREE
+  ════════════════════════════════ -->
+  <div id="srv-ballet" class="srv-section">
+
+    <div class="banner">
+      <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1200,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-27-at-1.28.18-pm-3-KFoAuHD7rad3lWfA.jpeg" alt="Ballet Free" />
+      <div class="banner-overlay"></div>
+      <div class="banner-title">
+        <p class="banner-tag">Cuerpo · Movimiento &amp; Bienestar</p>
+        <h2 class="banner-h2">Ballet Free</h2>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="content-grid">
+        <div>
+          <p class="section-label">Movimiento &amp; Bienestar</p>
+          <div class="divider"></div>
+          <h3 class="content-h3">No tienes tiempo para cinco clases distintas.<br>Necesitas una que lo haga todo.</h3>
+          <p class="content-sub">60 minutos · Cardio · Fuerza · Elasticidad · Postura</p>
+
+          <p class="content-body">Ballet Free concentra en 60 minutos lo que normalmente obtendrías en cardio, fuerza, elasticidad y postura… sin el desgaste del gimnasio tradicional.</p>
+          <p class="content-body">En una sola sesión trabajas:</p>
+
+          <ul class="bullets">
+            <li>Cardio activo y controlado</li>
+            <li>Fuerza en piernas y glúteos</li>
+            <li>Resistencia muscular</li>
+            <li>Postura y alineación</li>
+            <li>Equilibrio y coordinación</li>
+            <li>Elasticidad real y movilidad</li>
+          </ul>
+
+          <p class="content-body" style="margin-top: 20px;">Todo en una secuencia estructurada que estiliza el cuerpo mientras lo fortalece.</p>
+
+          <div class="highlight" style="margin-top: 28px;">
+            <p>Aquí no vienes solo a sudar. Vienes a entrenar con inteligencia. Mientras activas el cuerpo, liberas tensión emocional a través del movimiento y desarrollas sensibilidad musical con momentos acompañados de música clásica y rítmica.<br><br><em>Una hora. Un método completo. Resultados integrales.</em></p>
+          </div>
+
+          <a class="cta-btn" href="https://wa.me/15144304667">Agendar sesión</a>
+        </div>
+        <div>
+          <div class="gallery">
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=500,h=380,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-27-at-11.54.44-pm-gbW43OQoBGpYW9oM.jpeg" alt="Ballet Free clase" />
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=500,h=380,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-28-at-10.55.34-am-V9qztCfTbpwJEr5h.jpeg" alt="Ballet Free clase" />
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=500,h=380,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-27-at-1.28.18-pm-3-KFoAuHD7rad3lWfA.jpeg" alt="Ballet Free clase" />
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=500,h=380,fit=crop/AR0Mw9l9goSZVOal/whatsapp-image-2026-02-28-at-12.00.31-am-kbeQQopaT29SsepG.jpeg" alt="Ballet Free clase" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="https://holistic-energy-coach.com/" class="footer-logo">Holistic Energy Coach</a>
+    <ul class="footer-links">
+      <li><a href="https://holistic-energy-coach.com/">Inicio</a></li>
+      <li><a href="https://holistic-energy-coach.com/mis-servicios">Servicios</a></li>
+      <li><a href="https://holistic-energy-coach.com/contacto">Contacto</a></li>
+    </ul>
+    <span class="footer-copy">© 2026</span>
+  </footer>
+
+  <script>
+    function showTab(id, el) {
+      document.querySelectorAll('.srv-section').forEach(function(s) {
+        s.classList.remove('active');
+      });
+      document.querySelectorAll('.tab').forEach(function(t) {
+        t.classList.remove('active');
+      });
+      document.getElementById('srv-' + id).classList.add('active');
+      el.classList.add('active');
+      // Scroll suave al banner
+      document.getElementById('srv-' + id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+
+</body>
+</html>
